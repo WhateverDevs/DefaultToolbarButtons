@@ -1,0 +1,17 @@
+{
+  "name": "whateverdevs.default-toolbar-buttons",
+  "version": "0.0.1",
+  "dependencies": {
+    "whateverdevs.core": "0.0.81",
+    "whateverdevs.toolbar-buttons": "2.2.1",
+    "whateverdevs.scenemanagement": "0.0.4",
+    "whateverdevs.2daudio": "0.0.1"
+  },
+  "displayName": "Default toolbar buttons",
+  "description": "This is our default configuration for our toolbar buttons.",
+  "unity": "2021.1",
+  "author": {
+    "name": "Whatever Devs",
+    "url": "https://discord.gg/B8aaMzJ"
+  }
+}
