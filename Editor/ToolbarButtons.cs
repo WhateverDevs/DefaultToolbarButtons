@@ -45,11 +45,26 @@ namespace WhateverDevs.DefaultToolBarButtons.Editor
 
         #if WHATEVERDEVS_TOOLBARBUTTONS
 
+        #if WHATEVERDEVS_TOOLBARBUTTONS_SAVE
+
+        /// <summary>
+        /// Save the scene and project.
+        /// </summary>
+        [ToolbarButton("SaveAs@2x", "Save the scene and project.")]
+        [UsedImplicitly]
+        public static void Save()
+        {
+            EditorApplication.ExecuteMenuItem("File/Save");
+            EditorApplication.ExecuteMenuItem("File/Save Project");
+        }
+
+        #endif
+
         #if WHATEVERDEVS_TOOLBARBUTTONS_PROJECTFOLDER
         /// <summary>
         /// Open the project folder.
         /// </summary>
-        [ToolbarButton("Folder Icon", "Open project folder")]
+        [ToolbarButton("Folder Icon", "Open project folder.")]
         [UsedImplicitly]
         public static void OpenProjectFolder() => DefaultToolbarButtons.OpenFolder();
         #endif
@@ -141,7 +156,7 @@ namespace WhateverDevs.DefaultToolBarButtons.Editor
             menu.ShowAsContext();
         }
         #endif
-        
+
         #if WHATEVERDEVS_TOOLBARBUTTONS_TWODAUDIO
         /// <summary>
         /// Open the project context.
@@ -213,7 +228,7 @@ namespace WhateverDevs.DefaultToolBarButtons.Editor
             if (config != null) return;
             if (!Directory.Exists(ConfigFolder)) Directory.CreateDirectory(ConfigFolder);
 
-            config = (ToolbarButtonsConfig) ScriptableObject.CreateInstance(typeof(ToolbarButtonsConfig));
+            config = (ToolbarButtonsConfig)ScriptableObject.CreateInstance(typeof(ToolbarButtonsConfig));
             AssetDatabase.CreateAsset(config, ConfigPath);
             AssetDatabase.SaveAssets();
         }

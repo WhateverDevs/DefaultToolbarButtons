@@ -21,6 +21,13 @@ namespace WhateverDevs.DefaultToolBarButtons.Editor
         [InfoBox("Changing this config recompiles the project, be patient :)")]
         [OnValueChanged("OnEnableToolbarButtonsChange")]
         public bool EnableToolbarButtons;
+        
+        /// <summary>
+        /// Enable the save toolbar button?
+        /// </summary>
+        [FoldoutGroup("General")]
+        [OnValueChanged("OnEnableSaveButton")]
+        public bool EnableSaveButton;
 
         /// <summary>
         /// Enable the project folder toolbar button?
@@ -130,6 +137,13 @@ namespace WhateverDevs.DefaultToolBarButtons.Editor
         [UsedImplicitly]
         private void OnEnableToolbarButtonsChange() =>
             ScriptingDefines.SetDefine("WHATEVERDEVS_TOOLBARBUTTONS", EnableToolbarButtons);
+        
+        /// <summary>
+        /// Called when the EnableSaveButton property is changed.
+        /// </summary>
+        [UsedImplicitly]
+        private void OnEnableSaveButton() =>
+            ScriptingDefines.SetDefine("WHATEVERDEVS_TOOLBARBUTTONS_SAVE", EnableSaveButton);
 
         /// <summary>
         /// Called when the EnableProjectFolderButton property is changed.
