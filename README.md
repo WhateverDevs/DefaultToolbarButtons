@@ -11,7 +11,7 @@ not, figure it out yourself.
 
 > If you don't see the package on the package manager, add the following line to your manifest.json.
 > ````json
-> "whateverdevs.default-toolbar-buttons": "0.0.1",
+> "whateverdevs.default-toolbar-buttons": "1.0.2",
 > ````
 
 This package has lots of other packages as dependencies but you don't necessarily need to use them, it just needs them
