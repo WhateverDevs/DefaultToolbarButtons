@@ -247,5 +247,26 @@ namespace WhateverDevs.DefaultToolBarButtons.Editor
         [UsedImplicitly]
         private void OnEnableConsoleProButton() =>
             ScriptingDefines.SetDefine("WHATEVERDEVS_TOOLBARBUTTONS_CONSOLEPRO", EnableConsoleProButton);
+
+        /// <summary>
+        /// If you changed to a new build target, you can hit the refresh button to get your buttons back.
+        /// </summary>
+        [InfoBox("If you changed to a new build target, you can hit the refresh button to get your buttons back.")]
+        [Button]
+        [PropertyOrder(-1)]
+        private void RefreshAll()
+        {
+            OnEnableToolbarButtonsChange();
+            OnEnableSaveButton();
+            OnEnableProjectFolderButton();
+            OnEnablePackageManagerButton();
+            OnEnableProjectSettingsButton();
+            OnEnableBuildButton();
+            OnEnablePlayButton();
+            OnEnableProjectContextButton();
+            OnEnableSceneManagementButton();
+            OnEnable2DAudioButton();
+            OnEnableConsoleProButton();
+        }
     }
 }
