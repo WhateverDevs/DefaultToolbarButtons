@@ -52,6 +52,7 @@ namespace WhateverDevs.DefaultToolBarButtons.Editor
         /// </summary>
         [ToolbarButton("SaveAs@2x", "Save the scene and project.")]
         [UsedImplicitly]
+        [MenuItem("WhateverDevs/Toolbar Fallback/Save #&s")]
         public static void Save()
         {
             EditorApplication.ExecuteMenuItem("File/Save");
@@ -75,6 +76,7 @@ namespace WhateverDevs.DefaultToolBarButtons.Editor
         /// </summary>
         [ToolbarButton(iconName = "Package Manager", tooltip = "Package Manager")]
         [UsedImplicitly]
+        [MenuItem("WhateverDevs/Toolbar Fallback/Packman #&o")]
         public static void OpenPackageManager() => DefaultToolbarButtons.ShowPackageManager();
         #endif
 
@@ -181,6 +183,7 @@ namespace WhateverDevs.DefaultToolBarButtons.Editor
         // ReSharper disable once StringLiteralTypo
         [ToolbarButton("d_winbtn_win_max", "Console Pro")]
         [UsedImplicitly]
+        [MenuItem("WhateverDevs/Toolbar Fallback/Console Pro #&c")]
         public static void OpenConsolePro() => EditorApplication.ExecuteMenuItem("Window/Console Pro 3");
         #endif
 
@@ -190,6 +193,7 @@ namespace WhateverDevs.DefaultToolBarButtons.Editor
         /// </summary>
         [ToolbarButton("UnityEditor.GameView", "Play from init")]
         [UsedImplicitly]
+        [MenuItem("WhateverDevs/Toolbar Fallback/Play #&p")]
         public static void PlayFromInit()
         {
             if (Application.isPlaying) return;
