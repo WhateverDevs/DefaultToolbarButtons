@@ -1,6 +1,6 @@
 {
   "name": "whateverdevs.default-toolbar-buttons",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "dependencies": {
     "whateverdevs.core": "0.1.0",
     "whateverdevs.toolbar-buttons": "2.2.1",

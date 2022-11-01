@@ -190,13 +190,18 @@ namespace WhateverDevs.DefaultToolBarButtons.Editor
         #if WHATEVERDEVS_TOOLBARBUTTONS_PLAYBUTTON
         /// <summary>
         /// Open the app initialization scene and then play.
+        /// Stop playing if it is.
         /// </summary>
         [ToolbarButton("UnityEditor.GameView", "Play from init")]
         [UsedImplicitly]
         [MenuItem("WhateverDevs/Toolbar Fallback/Play #&p")]
         public static void PlayFromInit()
         {
-            if (Application.isPlaying) return;
+            if (Application.isPlaying)
+            {
+                EditorApplication.isPlaying = false;
+                return;
+            }
 
             try
             {
