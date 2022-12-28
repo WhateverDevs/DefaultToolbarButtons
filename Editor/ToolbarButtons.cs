@@ -86,7 +86,28 @@ namespace WhateverDevs.DefaultToolBarButtons.Editor
         /// </summary>
         [ToolbarButton("Settings", "Show Settings")]
         [UsedImplicitly]
-        public static void OpenSettings() => DefaultToolbarButtons.ShowSettings();
+        public static void OpenSettings()
+        {
+            GenericMenu menu = new();
+
+            menu.AddItem(new GUIContent("Project"),
+                         false,
+                         () => EditorApplication.ExecuteMenuItem("Edit/Project Settings..."));
+
+            menu.AddItem(new GUIContent("Preferences"),
+                         false,
+                         () => EditorApplication.ExecuteMenuItem("Edit/Preferences..."));
+            
+            menu.AddItem(new GUIContent("C# Project"), false, OpenCSharpProject);
+
+            menu.ShowAsContext();
+        }
+        
+        /// <summary>
+        /// Open the C# project.
+        /// </summary>
+        [MenuItem("WhateverDevs/Toolbar Fallback/C# Project #&x")]
+        private static void OpenCSharpProject() => EditorApplication.ExecuteMenuItem("Assets/Open C# Project");
         #endif
 
         #if WHATEVERDEVS_TOOLBARBUTTONS_PROJECTCONTEXT
@@ -220,6 +241,7 @@ namespace WhateverDevs.DefaultToolBarButtons.Editor
 
             EditorApplication.isPlaying = true;
         }
+
         #endif
 
         #endif
