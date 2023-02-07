@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using JetBrains.Annotations;
 using UnityEditor;
 using WhateverDevs.Core.Editor.Utils;
@@ -89,6 +90,15 @@ namespace WhateverDevs.DefaultToolBarButtons.Editor
         [ShowIf("EnablePlayButton")]
         #endif
         public SceneAsset InitializationScene;
+
+        /// <summary>
+        /// Hooks to run when hitting play.
+        /// </summary>
+        #if ODIN_INSPECTOR_3
+        [FoldoutGroup("General")]
+        [ShowIf("EnablePlayButton")]
+        #endif
+        public List<PlayHook> PlayHooks;
 
         /// <summary>
         /// Enable the project context toolbar button?

@@ -97,12 +97,12 @@ namespace WhateverDevs.DefaultToolBarButtons.Editor
             menu.AddItem(new GUIContent("Preferences"),
                          false,
                          () => EditorApplication.ExecuteMenuItem("Edit/Preferences..."));
-            
+
             menu.AddItem(new GUIContent("C# Project"), false, OpenCSharpProject);
 
             menu.ShowAsContext();
         }
-        
+
         /// <summary>
         /// Open the C# project.
         /// </summary>
@@ -218,6 +218,8 @@ namespace WhateverDevs.DefaultToolBarButtons.Editor
         [MenuItem("WhateverDevs/Toolbar Fallback/Play #&p")]
         public static void PlayFromInit()
         {
+            CacheConfig();
+            
             if (Application.isPlaying)
             {
                 EditorApplication.isPlaying = false;
@@ -230,14 +232,14 @@ namespace WhateverDevs.DefaultToolBarButtons.Editor
 
                 EditorSceneManager.SaveOpenScenes();
 
-                CacheConfig();
-
                 EditorSceneManager.OpenScene(AssetDatabase.GetAssetPath(config.InitializationScene));
             }
             finally
             {
                 EditorUtility.ClearProgressBar();
             }
+
+            foreach (PlayHook playHook in config.PlayHooks) playHook.Run();
 
             EditorApplication.isPlaying = true;
         }
