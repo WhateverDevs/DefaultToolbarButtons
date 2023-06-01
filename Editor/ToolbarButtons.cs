@@ -35,7 +35,7 @@ namespace WhateverDevs.DefaultToolBarButtons.Editor
         /// <summary>
         /// Open the project folder.
         /// </summary>
-        [ToolbarButton("Audio Mixer@2x", "Open toolbar buttons settings")]
+        [ToolbarButton("Audio Mixer@2x", "Open toolbar buttons settings", 10)]
         [UsedImplicitly]
         public static void ButtonsConfig()
         {
@@ -50,7 +50,7 @@ namespace WhateverDevs.DefaultToolBarButtons.Editor
         /// <summary>
         /// Save the scene and project.
         /// </summary>
-        [ToolbarButton("SaveAs@2x", "Save the scene and project.")]
+        [ToolbarButton("SaveAs@2x", "Save the scene and project.", 9)]
         [UsedImplicitly]
         [MenuItem("WhateverDevs/Toolbar Fallback/Save #&s")]
         public static void Save()
@@ -65,7 +65,7 @@ namespace WhateverDevs.DefaultToolBarButtons.Editor
         /// <summary>
         /// Open the project folder.
         /// </summary>
-        [ToolbarButton("Folder Icon", "Open project folder.")]
+        [ToolbarButton("Folder Icon", "Open project folder.", 8)]
         [UsedImplicitly]
         public static void OpenProjectFolder() => DefaultToolbarButtons.OpenFolder();
         #endif
@@ -74,7 +74,7 @@ namespace WhateverDevs.DefaultToolBarButtons.Editor
         /// <summary>
         /// Open the package manager.
         /// </summary>
-        [ToolbarButton(iconName = "Package Manager", tooltip = "Package Manager")]
+        [ToolbarButton(iconName = "Package Manager", tooltip = "Package Manager", order = 7)]
         [UsedImplicitly]
         [MenuItem("WhateverDevs/Toolbar Fallback/Packman #&o")]
         public static void OpenPackageManager() => DefaultToolbarButtons.ShowPackageManager();
@@ -84,7 +84,7 @@ namespace WhateverDevs.DefaultToolBarButtons.Editor
         /// <summary>
         /// Open either project settings or editor settings.
         /// </summary>
-        [ToolbarButton("Settings", "Show Settings")]
+        [ToolbarButton("Settings", "Show Settings", 6)]
         [UsedImplicitly]
         public static void OpenSettings()
         {
@@ -114,7 +114,7 @@ namespace WhateverDevs.DefaultToolBarButtons.Editor
         /// <summary>
         /// Open the project context.
         /// </summary>
-        [ToolbarButton("d_EditCollider", "Project Context")]
+        [ToolbarButton("d_EditCollider", "Project Context", 5)]
         [UsedImplicitly]
         public static void ProjectContext()
         {
@@ -132,7 +132,7 @@ namespace WhateverDevs.DefaultToolBarButtons.Editor
         /// Opens the Console Pro window.
         /// </summary>
         // ReSharper disable once StringLiteralTypo
-        [ToolbarButton("d_SceneViewFX@2x", "Build")]
+        [ToolbarButton("d_SceneViewFX@2x", "Build", 4)]
         [UsedImplicitly]
         public static void OpenBuild() => EditorApplication.ExecuteMenuItem("File/Build Settings...");
         #endif
@@ -141,7 +141,7 @@ namespace WhateverDevs.DefaultToolBarButtons.Editor
         /// <summary>
         /// Open the addressable groups.
         /// </summary>
-        [ToolbarButton("d_Profiler.NetworkOperations@2x", "Addressables")]
+        [ToolbarButton("d_Profiler.NetworkOperations@2x", "Addressables", 3)]
         [UsedImplicitly]
         public static void Addressables()
         {
@@ -184,7 +184,7 @@ namespace WhateverDevs.DefaultToolBarButtons.Editor
         /// <summary>
         /// Open the project context.
         /// </summary>
-        [ToolbarButton("d_Profiler.Audio@2x", "Audio Library")]
+        [ToolbarButton("d_Profiler.Audio@2x", "Audio Library", 2)]
         [UsedImplicitly]
         public static void AudioLibrary()
         {
@@ -202,7 +202,7 @@ namespace WhateverDevs.DefaultToolBarButtons.Editor
         /// Opens the Console Pro window.
         /// </summary>
         // ReSharper disable once StringLiteralTypo
-        [ToolbarButton("d_winbtn_win_max", "Console Pro")]
+        [ToolbarButton("d_winbtn_win_max", "Console Pro", 1)]
         [UsedImplicitly]
         [MenuItem("WhateverDevs/Toolbar Fallback/Console Pro #&c")]
         public static void OpenConsolePro() => EditorApplication.ExecuteMenuItem("Window/Console Pro 3");
@@ -219,7 +219,7 @@ namespace WhateverDevs.DefaultToolBarButtons.Editor
         public static void PlayFromInit()
         {
             CacheConfig();
-            
+
             if (Application.isPlaying)
             {
                 EditorApplication.isPlaying = false;
