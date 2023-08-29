@@ -1,17 +1,20 @@
 {
-  "name": "whateverdevs.default-toolbar-buttons",
-  "version": "1.1.0",
+  "name": "whateverdevs.vargs-toolbar-buttons",
+  "version": "1.0.0",
   "dependencies": {
     "whateverdevs.core": "0.1.0",
     "whateverdevs.toolbar-buttons": "2.2.1",
     "whateverdevs.scenemanagement": "0.0.18",
     "whateverdevs.2daudio": "0.0.4"
   },
-  "displayName": "Default toolbar buttons",
-  "description": "This is our default configuration for our toolbar buttons.",
+  "displayName": "Varg's buttons",
+  "description": "Toolbar buttons that Varga likes.",
   "unity": "2021.1",
   "author": {
     "name": "Whatever Devs",
     "url": "https://discord.gg/B8aaMzJ"
+  },
+  "publishConfig": {
+    "registry": "http://upm.rodrigovarga.com/"
   }
 }

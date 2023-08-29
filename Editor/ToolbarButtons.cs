@@ -202,7 +202,7 @@ namespace WhateverDevs.DefaultToolBarButtons.Editor
         /// Opens the Console Pro window.
         /// </summary>
         // ReSharper disable once StringLiteralTypo
-        [ToolbarButton("d_winbtn_win_max", "Console Pro", 1)]
+        [ToolbarButton("d_Profiler.UIDetails@2x", "Console Pro", 1)]
         [UsedImplicitly]
         [MenuItem("WhateverDevs/Toolbar Fallback/Console Pro #&c")]
         public static void OpenConsolePro() => EditorApplication.ExecuteMenuItem("Window/Console Pro 3");
