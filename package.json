@@ -1,8 +1,9 @@
 {
   "name": "whateverdevs.vargs-toolbar-buttons",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "dependencies": {
     "whateverdevs.core": "0.1.0",
+    "whateverdevs.localization": "0.1.16",
     "whateverdevs.toolbar-buttons": "2.2.1",
     "whateverdevs.scenemanagement": "0.0.18",
     "whateverdevs.2daudio": "0.0.4"
@@ -12,7 +13,7 @@
   "unity": "2021.1",
   "author": {
     "name": "Whatever Devs",
-    "url": "https://discord.gg/B8aaMzJ"
+    "url": "https://github.com/WhateverDevs"
   },
   "publishConfig": {
     "registry": "http://upm.rodrigovarga.com/"
