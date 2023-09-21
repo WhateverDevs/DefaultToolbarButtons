@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using WhateverDevs.Localization.Editor;
-using WhateverDevs.Localization.Runtime;
 
 namespace WhateverDevs.DefaultToolBarButtons.Editor.Integrations
 {
@@ -17,14 +16,13 @@ namespace WhateverDevs.DefaultToolBarButtons.Editor.Integrations
         public string Url;
 
         /// <summary>
-        /// Reference to the configuration file.
+        /// Directory in which to output the localization (inside assets).
         /// </summary>
-        public LocalizerConfigurationFile LocalizationConfigurationFile;
+        public string OutputDirectory = "Languages/";
 
         /// <summary>
         /// Run before playing.
         /// </summary>
-        public override void Run() =>
-            GoogleSheetLoader.LoadLanguages(Url, LocalizationConfigurationFile.ConfigurationData.LanguagePackDirectory);
+        public override void Run() => GoogleSheetLoader.LoadLanguages(Url, OutputDirectory);
     }
 }
