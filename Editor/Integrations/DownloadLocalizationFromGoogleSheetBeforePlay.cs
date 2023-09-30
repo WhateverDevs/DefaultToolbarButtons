@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using WhateverDevs.Localization.Editor;
+using WhateverDevs.Localization.Runtime;
 
 namespace WhateverDevs.DefaultToolBarButtons.Editor.Integrations
 {
@@ -11,18 +12,16 @@ namespace WhateverDevs.DefaultToolBarButtons.Editor.Integrations
     public class DownloadLocalizationFromGoogleSheetBeforePlay : PlayHook
     {
         /// <summary>
-        /// Url to refresh from.
+        /// Reference to the localization project settings.
         /// </summary>
-        public string Url;
-
-        /// <summary>
-        /// Directory in which to output the localization (inside assets).
-        /// </summary>
-        public string OutputDirectory = "Languages/";
+        [SerializeField]
+        private LocalizerSettings LocalizationProjectSettings;
 
         /// <summary>
         /// Run before playing.
         /// </summary>
-        public override void Run() => GoogleSheetLoader.LoadLanguages(Url, OutputDirectory);
+        public override void Run() =>
+            GoogleSheetLoader.LoadLanguages(LocalizationProjectSettings.GoogleSheetsDownloadUrl,
+                                            LocalizationProjectSettings.LanguagePackDirectory);
     }
 }
