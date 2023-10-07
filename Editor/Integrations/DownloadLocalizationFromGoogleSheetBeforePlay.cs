@@ -21,7 +21,7 @@ namespace WhateverDevs.DefaultToolBarButtons.Editor.Integrations
         /// Run before playing.
         /// </summary>
         public override void Run() =>
-            GoogleSheetLoader.LoadLanguages(LocalizationProjectSettings.GoogleSheetsDownloadUrl,
+            GoogleSheetLoader.LoadLanguages(LocalizationProjectSettings.GoogleSheetsDownloadUrls.ToArray(),
                                             LocalizationProjectSettings.LanguagePackDirectory);
     }
 }
