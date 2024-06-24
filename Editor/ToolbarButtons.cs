@@ -166,7 +166,7 @@ namespace WhateverDevs.DefaultToolBarButtons.Editor
                                    AssetDatabase
                                       .LoadAssetAtPath<
                                            AddressableVersionDependence>(AssetDatabase.GetAssetPath(config
-                                                                            .AddressableVersionDependence)));
+                                                                                     .AddressableVersionDependence)));
 
             menu.AddItem(new GUIContent("Addressables/Builder"),
                          false,
@@ -228,6 +228,10 @@ namespace WhateverDevs.DefaultToolBarButtons.Editor
 
             try
             {
+                EditorUtility.DisplayProgressBar("Loading", "Running play hooks...", .25f);
+                
+                foreach (PlayHook playHook in config.PlayHooks) playHook.Run();
+
                 EditorUtility.DisplayProgressBar("Loading", "Loading init scene...", .5f);
 
                 EditorSceneManager.SaveOpenScenes();
@@ -238,8 +242,6 @@ namespace WhateverDevs.DefaultToolBarButtons.Editor
             {
                 EditorUtility.ClearProgressBar();
             }
-
-            foreach (PlayHook playHook in config.PlayHooks) playHook.Run();
 
             EditorApplication.isPlaying = true;
         }
