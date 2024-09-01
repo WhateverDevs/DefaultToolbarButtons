@@ -132,9 +132,18 @@ namespace WhateverDevs.DefaultToolBarButtons.Editor
         /// Opens the Console Pro window.
         /// </summary>
         // ReSharper disable once StringLiteralTypo
+        #if UNITY_6000_0_OR_NEWER
+        [ToolbarButton("Collab.Build", "Build", 4)]
+        #else
         [ToolbarButton("d_SceneViewFX@2x", "Build", 4)]
+        #endif
         [UsedImplicitly]
-        public static void OpenBuild() => EditorApplication.ExecuteMenuItem("File/Build Settings...");
+        public static void OpenBuild() =>
+            #if UNITY_6000_0_OR_NEWER
+            EditorApplication.ExecuteMenuItem("File/Build Profiles");
+        #else
+            EditorApplication.ExecuteMenuItem("File/Build Settings...");
+        #endif
         #endif
 
         #if WHATEVERDEVS_TOOLBARBUTTONS_SCENEMANAGEMENT
@@ -229,7 +238,7 @@ namespace WhateverDevs.DefaultToolBarButtons.Editor
             try
             {
                 EditorUtility.DisplayProgressBar("Loading", "Running play hooks...", .25f);
-                
+
                 foreach (PlayHook playHook in config.PlayHooks) playHook.Run();
 
                 EditorUtility.DisplayProgressBar("Loading", "Loading init scene...", .5f);
@@ -263,7 +272,7 @@ namespace WhateverDevs.DefaultToolBarButtons.Editor
             if (config != null) return;
             if (!Directory.Exists(ConfigFolder)) Directory.CreateDirectory(ConfigFolder);
 
-            config = (ToolbarButtonsConfig)ScriptableObject.CreateInstance(typeof(ToolbarButtonsConfig));
+            config = (ToolbarButtonsConfig) ScriptableObject.CreateInstance(typeof(ToolbarButtonsConfig));
             AssetDatabase.CreateAsset(config, ConfigPath);
             AssetDatabase.SaveAssets();
         }

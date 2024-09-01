@@ -1,6 +1,6 @@
 {
   "name": "whateverdevs.vargs-toolbar-buttons",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "dependencies": {
     "whateverdevs.core": "0.1.0",
     "whateverdevs.localization": "0.3.0",
